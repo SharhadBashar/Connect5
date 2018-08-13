@@ -408,5 +408,33 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
                 return idsList;
             }
         }
+
+        public ActionResult<IEnumerable<T>> ReadDoc<T>(Guid userId, string permission)
+            where T : BaseGraphEntity, new()
+        {
+            var models = new List<T>();
+            if (permission.Equals("Read")) { permission = "User R access"; }
+            else if (permission.Equals("Write")) { permission = "User W access"; }
+            else if (permission.Equals("List")) { permission = "User L access"; }
+            var gremlinClient = new GremlinClient(this._graphServer, new GraphSON2Reader(), new GraphSON2Writer(), GremlinClient.GraphSON2MimeType);
+            {
+                T temp = new T(); // Just to get the correct label
+                var getDocId = gremlinClient.SubmitAsync<dynamic>($"g.V().hasId('{userId}').outE().haslabel('{permission}').inV().id()");
+                getDocId.Wait();
+                foreach (string docId in getDocId.Result)
+                {                   
+                    var task = gremlinClient.SubmitAsync<dynamic>($"g.V().hasId('{Guid.Parse(docId)}')");
+                    task.Wait();           
+                    foreach (var result in task.Result)
+                    {
+                        T s = new T();
+                        s.Load(new Guid(result["id"]), JObject.Parse(JsonConvert.SerializeObject(result["properties"])));
+                        models.Add(s);
+                    }
+                }
+            }
+
+            return models;
+        }
     }
 }

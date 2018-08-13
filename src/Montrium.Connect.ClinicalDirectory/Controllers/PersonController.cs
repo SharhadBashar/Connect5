@@ -8,10 +8,14 @@ using System.Globalization;
 
 namespace Montrium.Connect.ClinicalDirectory.Controllers
 {
+    /// <summary>
+    /// controller for creating, updating, deleting person
+    /// </summary>
     //[Authorize]
     [ApiController]
     [Produces("application/json")]
     [Route("/api/[controller]")]
+    
     public class PersonController : Controller
     {
         private readonly IStudyService _studyService;
@@ -19,6 +23,13 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         private readonly ISiteService _siteService;
         private readonly IPersonService _personService;
 
+        /// <summary>
+        /// creates repo for person
+        /// </summary>
+        /// <param name="studyService"></param>
+        /// <param name="countryService"></param>
+        /// <param name="siteService"></param>
+        /// <param name="personService"></param>
         public PersonController(IStudyService studyService, ICountryService countryService, ISiteService siteService, IPersonService personService)
         {
             this._studyService = studyService;
@@ -26,8 +37,23 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             this._siteService = siteService;
             this._personService = personService;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
+        [ProducesResponseType(200, Type = typeof(Person))]
+        public ActionResult<IEnumerable<Person>> Get()
+        {
+            return _personService.ReadPersons();
+        }
+
+        /// <summary>
+        /// gets all person
+        /// </summary>
+        /// <param name="personId"></param>
+        /// <returns></returns>
+        [HttpGet("{personId:Guid}")]
         // GET api/person
         [ProducesResponseType(200, Type = typeof(Person))]
         public ActionResult<IEnumerable<Person>> Get([FromRoute]Guid personId = new Guid())
@@ -45,11 +71,10 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
 
 
         /// <summary>
-        /// Create a new site under a study (update if exists)
+        /// Create a new person
         /// </summary>
         /// <param name="site"></param>
         /// <returns></returns>
-        // POST api/sites
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)] // Bad Request
@@ -64,6 +89,12 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return Created(new Uri(String.Format(CultureInfo.InvariantCulture, "/api/person/{0}", person.Id), UriKind.Relative), person);
         }
 
+        /// <summary>
+        /// updates a person
+        /// </summary>
+        /// <param name="personId"></param>
+        /// <param name="person"></param>
+        /// <returns></returns>
         [HttpPut("{personId:Guid}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)] // No Content
@@ -78,6 +109,11 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return Accepted(new Uri(String.Format(CultureInfo.InvariantCulture, "/api/person/{0}", person.Id), UriKind.Relative), person);
         }
 
+        /// <summary>
+        /// Deletes a person
+        /// </summary>
+        /// <param name="personId"></param>
+        /// <returns></returns>
         [HttpDelete("{personId:Guid}")]
         public ActionResult Delete([FromRoute]Guid personId)
         {

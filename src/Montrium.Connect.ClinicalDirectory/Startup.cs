@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using MediatR;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Montrium.Connect.ClinicalDirectory.Repositories;
 using Montrium.Connect.ClinicalDirectory.Services;
+using Montrium.Connect.ClinicalDirectory.Commands;
 
 namespace Montrium.Connect.ClinicalDirectory
 {
@@ -38,6 +40,8 @@ namespace Montrium.Connect.ClinicalDirectory
             services.AddScoped<ICountryService, CountryService>();
             services.AddScoped<ISiteService, SiteService>();
             services.AddScoped<IPersonService, PersonService>();
+            services.AddMediatR(typeof(CreateStudyCommandHandler));
+            services.AddMediatR(typeof(UpdateStudyCommandHandler));
             services.AddScoped<IProcessZoneService, ProcessZoneService>();
             services.AddScoped<IDocumentService, DocumentService>();
         }

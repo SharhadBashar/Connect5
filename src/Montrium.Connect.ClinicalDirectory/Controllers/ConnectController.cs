@@ -10,6 +10,9 @@ using System.Globalization;
 
 namespace Montrium.Connect.ClinicalDirectory.Controllers
 {
+    /// <summary>
+    /// Adds, updates, deletes Edges between nodes
+    /// </summary>
      //[Authorize]
     [ApiController]
     [Produces("application/json")]
@@ -70,7 +73,11 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
                     int pos = Array.IndexOf(userProcessZones, docProcessZone);
                     if (pos > -1)
                     {
-                        _repository.CreateEdge(parentId, documentsId[i], string.Format("User {0} access", userSecurity[pos]));
+                        Guid hasEdge = _repository.ReadEdge(parentId, documentsId[i]);
+                        if (hasEdge.Equals(Guid.Empty))
+                        {
+                            _repository.CreateEdge(parentId, documentsId[i], string.Format("User {0} access", userSecurity[pos]));
+                        }
                     }
                 }
             }
@@ -152,6 +159,14 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return new OkResult();
         }
 
+        /// <summary>
+        /// Patch an edge
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="child"></param>
+        /// <param name="parentId"></param>
+        /// <param name="childId"></param>
+        /// <returns></returns>
         [HttpPatch()]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)] // No Content

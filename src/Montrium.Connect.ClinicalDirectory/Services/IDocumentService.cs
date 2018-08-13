@@ -12,5 +12,6 @@ namespace Montrium.Connect.ClinicalDirectory.Services
         ActionResult<IEnumerable<Document>> ReadDocuments();
         ActionResult<Document> UpdateDocument(Document document);
         ActionResult DeleteDocument(Guid id);
+        ActionResult<IEnumerable<Document>> GetDoc(Guid userId, string permission);
     }
 }

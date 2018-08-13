@@ -5,10 +5,10 @@ EXPOSE 443
 FROM microsoft/aspnetcore-build:2.0 AS build
 WORKDIR /src
 COPY Montium.Connect.sln ./
-COPY Montrium.Connect.MessageBus/Montrium.Connect.MessageBus.csproj Montrium.Connect.EventBusRabbitMQ/
+COPY Montrium.Connect.EventBusRabbitMQ/Montrium.Connect.EventBusRabbitMQ.csproj Montrium.Connect.EventBusRabbitMQ/
 RUN dotnet restore -nowarn:msb3202,nu1503
 COPY . .
-WORKDIR /src/Montrium.Connect.MessageBus
+WORKDIR /src/Montrium.Connect.EventBusRabbitMQ
 RUN dotnet build -c Release -o /app
 
 FROM build AS publish

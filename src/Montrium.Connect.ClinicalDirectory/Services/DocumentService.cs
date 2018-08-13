@@ -44,5 +44,10 @@ namespace Montrium.Connect.ClinicalDirectory.Services
         {
             return this._repository.Delete<Document>(id);
         }
+
+        public ActionResult<IEnumerable<Document>> GetDoc (Guid userId, string permission)
+        {
+            return this._repository.ReadDoc<Document>(userId, permission);
+        }
     }
 }

@@ -8,6 +8,9 @@ using System.Globalization;
 
 namespace Montrium.Connect.ClinicalDirectory.Controllers
 {
+    /// <summary>
+    /// controller for creating, updating, deleting sites
+    /// </summary>
     //[Authorize]
     [ApiController]
     [Produces("application/json")]
@@ -18,6 +21,12 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         private readonly ICountryService _countryService;
         private readonly ISiteService _siteService;
 
+        /// <summary>
+        /// creates repo for sites
+        /// </summary>
+        /// <param name="studyService"></param>
+        /// <param name="countryService"></param>
+        /// <param name="siteService"></param>
         public SitesController(IStudyService studyService, ICountryService countryService, ISiteService siteService)
         {
             this._studyService = studyService;
@@ -89,6 +98,12 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return Accepted(new Uri(String.Format(CultureInfo.InvariantCulture, "/api/sites/{0}", site.Id), UriKind.Relative), site);
         }
 
+        /// <summary>
+        /// patch a site
+        /// </summary>
+        /// <param name="siteId"></param>
+        /// <param name="site"></param>
+        /// <returns></returns>
         [HttpPatch("{siteId:Guid}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)] // No Content

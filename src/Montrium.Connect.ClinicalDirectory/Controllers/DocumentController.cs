@@ -10,27 +10,50 @@ using System.Globalization;
 
 namespace Montrium.Connect.ClinicalDirectory.Controllers
 {
+    /// <summary>
+    /// Controller for creates, updates, deletes document
+    /// </summary>
     //[Authorize]
     [ApiController]
     [Produces("application/json")]
     [Route("/api/[controller]")]
+    [Route("/api/User/{userId:Guid}/Permission/{permission}/[controller]")]
     public class DocumentController : Controller
     {
         private readonly IDocumentService _documentService;
 
+        /// <summary>
+        /// creates repor for document
+        /// </summary>
+        /// <param name="documentService"></param>
         public DocumentController(IDocumentService documentService)
         {
             this._documentService = documentService;
         }
 
+        /// <summary>
+        /// gets all document
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(Document))]
-        public ActionResult<IEnumerable<Document>> Get()
+        public ActionResult<IEnumerable<Document>> Get([FromRoute]Guid userId = new Guid(), [FromRoute]string permission = null)
         {
-            // TODO: Handle empty Ids (will tell which route was matched)
-            return _documentService.ReadDocuments();
+            if (userId != Guid.Empty && permission != null)
+            {
+                return _documentService.GetDoc(userId, permission);
+            }
+            else 
+            {
+                return _documentService.ReadDocuments();
+            }
         }
 
+        /// <summary>
+        /// getsa document
+        /// </summary>
+        /// <param name="documentId"></param>
+        /// <returns></returns>
         [HttpGet("{documentId:Guid}")]
         [ProducesResponseType(200, Type = typeof(Document))]
         [ProducesResponseType(404)]
@@ -43,6 +66,11 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return _documentService.ReadDocument(documentId);
         }
 
+        /// <summary>
+        /// creates a document
+        /// </summary>
+        /// <param name="document"></param>
+        /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(201, Type = typeof(Document))]
         [ProducesResponseType(400)] // Bad Request
@@ -59,6 +87,12 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return Created(new Uri(String.Format(CultureInfo.InvariantCulture, "/api/document/{0}", document.Id), UriKind.Relative), document);
         }
 
+        /// <summary>
+        /// edits a document
+        /// </summary>
+        /// <param name="documentId"></param>
+        /// <param name="document"></param>
+        /// <returns></returns>
         [HttpPut("{documentId:Guid}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)] // No Content
@@ -75,6 +109,11 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return Accepted(new Uri(String.Format(CultureInfo.InvariantCulture, "/api/document/{0}", document.Id), UriKind.Relative), document);
         }
 
+        /// <summary>
+        /// deletes a document
+        /// </summary>
+        /// <param name="documentId"></param>
+        /// <returns></returns>
         [HttpDelete("{documentId:Guid}")]
         public ActionResult Delete([FromRoute]Guid documentId)
         {

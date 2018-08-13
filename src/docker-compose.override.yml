@@ -1,14 +1,36 @@
 version: '3.4'
 
 services:
-  montrium.connect.clinicaldirectory:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
+  
+  #montrium.connect.clinicaldirectory:
+    #environment:
+      #- ASPNETCORE_ENVIRONMENT=Development
+    #ports:
+      #- "80"
 
-  montrium.connect.collaboration:
+  #montrium.connect.collaboration:
+    #environment:
+      #- ASPNETCORE_ENVIRONMENT=Development
+    #ports:
+      #- "80"
+
+  rabbitmq:
+    #image: rabbitmq:3-management-alpine
+    image: "rabbitmq:3-management"
+    hostname: "rabbithost"
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
+      RABBITMQ_DEFAULT_VHOST: "/"
     ports:
-      - "80"
+      - "15672:15672"
+      - "5672:5672"
+    labels:
+      NAME: "rabbitmq"
+    #volumes:
+      #- ./rabbitmq-isolated.conf:/etc/rabbitmq/rabbitmq.config
+      #- "./enabled_plugins:/etc/rabbitmq/enabled_plugins"
+      #- "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro"
+      #- "./autocluster-0.4.1.ez:/usr/lib/rabbitmq/lib/rabbitmq_server-3.5.5/plugins/autocluster-0.4.1.ez"
+

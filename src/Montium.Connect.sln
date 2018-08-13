@@ -22,6 +22,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Montrium.Connect.EventBusRa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Montrium.Connect.Auth", "Montrium.Connect.Auth\Montrium.Connect.Auth.csproj", "{2A5D44BA-1E2E-43E7-9B9D-EF2A06024D24}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Montrium.Connect.EventBus.Tests", "Montrium.Connect.EventBus.Tests\Montrium.Connect.EventBus.Tests.csproj", "{1F7BF5B8-4832-4EC1-A272-548978892E88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Montrium.Connect.EventBusServiceBus", "Montrium.Connect.EventBusServiceBus\Montrium.Connect.EventBusServiceBus.csproj", "{7494C3FC-1BBC-48AD-AE0B-E67500B2FEF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +60,14 @@ Global
 		{2A5D44BA-1E2E-43E7-9B9D-EF2A06024D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A5D44BA-1E2E-43E7-9B9D-EF2A06024D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A5D44BA-1E2E-43E7-9B9D-EF2A06024D24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F7BF5B8-4832-4EC1-A272-548978892E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F7BF5B8-4832-4EC1-A272-548978892E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F7BF5B8-4832-4EC1-A272-548978892E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F7BF5B8-4832-4EC1-A272-548978892E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7494C3FC-1BBC-48AD-AE0B-E67500B2FEF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7494C3FC-1BBC-48AD-AE0B-E67500B2FEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7494C3FC-1BBC-48AD-AE0B-E67500B2FEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7494C3FC-1BBC-48AD-AE0B-E67500B2FEF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

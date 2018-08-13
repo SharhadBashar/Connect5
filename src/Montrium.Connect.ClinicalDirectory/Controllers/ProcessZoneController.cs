@@ -10,6 +10,9 @@ using System.Globalization;
 
 namespace Montrium.Connect.ClinicalDirectory.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     //[Authorize]
     [ApiController]
     [Produces("application/json")]
@@ -18,11 +21,19 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
     {
         private readonly IProcessZoneService _processZoneService;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="processZoneService"></param>
         public ProcessZoneController(IProcessZoneService processZoneService)
         {
             this._processZoneService = processZoneService;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(ProcessZone))]
         public ActionResult<IEnumerable<ProcessZone>> Get()
@@ -31,6 +42,11 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return _processZoneService.ReadProcessZones();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="processzoneId"></param>
+        /// <returns></returns>
         [HttpGet("{processzoneId:Guid}")]
         [ProducesResponseType(200, Type = typeof(ProcessZone))]
         [ProducesResponseType(404)]
@@ -43,6 +59,11 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return _processZoneService.ReadProcessZone(processzoneId);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="processZone"></param>
+        /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(201, Type = typeof(ProcessZone))]
         [ProducesResponseType(400)] // Bad Request
@@ -59,6 +80,12 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return Created(new Uri(String.Format(CultureInfo.InvariantCulture, "/api/processZone/{0}", processZone.Id), UriKind.Relative), processZone);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="processZoneId"></param>
+        /// <param name="processZone"></param>
+        /// <returns></returns>
         [HttpPut("{processZoneId:Guid}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(204)] // No Content
@@ -73,6 +100,11 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return Accepted(new Uri(String.Format(CultureInfo.InvariantCulture, "/api/processZone/{0}", processZone.Id), UriKind.Relative), processZone);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="processZoneId"></param>
+        /// <returns></returns>
         [HttpDelete("{processZoneId:Guid}")]
         public ActionResult Delete([FromRoute]Guid processZoneId)
         {

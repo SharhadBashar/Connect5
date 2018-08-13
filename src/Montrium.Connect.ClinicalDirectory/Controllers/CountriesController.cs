@@ -8,6 +8,9 @@ using System.Globalization;
 
 namespace Montrium.Connect.ClinicalDirectory.Controllers
 {
+    /// <summary>
+    /// controller for adding, updating, deleting countries
+    /// </summary>
     //[Authorize]
     [ApiController]
     [Produces("application/json")]
@@ -17,12 +20,23 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         private readonly IStudyService _studyService;
         private readonly ICountryService _countryService;
 
+        /// <summary>
+        /// Creates the repo for adding countries 
+        /// </summary>
+        /// <param name="studyService"></param>
+        /// <param name="countryService"></param>
         public CountriesController(IStudyService studyService, ICountryService countryService)
         {
             this._studyService = studyService;
             this._countryService = countryService;
         }
 
+        /// <summary>
+        /// gets an country
+        /// </summary>
+        /// <param name="countryId"></param>
+        /// <param name="studyId"></param>
+        /// <returns></returns>
         // GET: api/countries/7817CD44-C316-4C31-93D2-2B95D6C16754
         [HttpGet("{countryId:Guid}")]
         [ProducesResponseType(200, Type = typeof(Country))]
@@ -37,6 +51,10 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return _countryService.ReadCountry(countryId);
         }
 
+        /// <summary>
+        /// gets all the countries
+        /// </summary>
+        /// <returns></returns>
         // GET: api/countries
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(Country))]
@@ -87,6 +105,11 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             return Accepted(new Uri(String.Format(CultureInfo.InvariantCulture, "/api/countries/{0}", country.Id), UriKind.Relative), country);
         }
 
+        /// <summary>
+        /// deletes an edge
+        /// </summary>
+        /// <param name="countryId"></param>
+        /// <returns></returns>
         // DELETE: api/countries/7817CD44-C316-4C31-93D2-2B95D6C16754
         [HttpDelete("{countryId:Guid}")]
         public ActionResult Delete(Guid countryId)

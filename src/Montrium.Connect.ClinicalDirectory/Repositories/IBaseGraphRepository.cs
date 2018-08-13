@@ -17,11 +17,14 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
 
         //Edge
         Guid ReadEdge(Guid parentId, Guid childId);
-        dynamic GetProperty(Guid nodeId, string property);
-        List<Guid> Transverse(Guid nodeId, bool direction);
-        List<Guid> GetChildNodes(Guid nodeId);
         ActionResult CreateEdge(Guid parentId, Guid childId, string relationship);
         ActionResult UpdateEdge(Guid edgeId, string newRelationship);
         ActionResult DeleteEdge(Guid edgeId);
+
+        //Get properties
+        dynamic GetProperty(Guid nodeId, string property);
+        List<Guid> Transverse(Guid nodeId, bool direction);
+        List<Guid> GetChildNodes(Guid nodeId);
+        ActionResult<IEnumerable<T>> ReadDoc<T>(Guid userId, string permission) where T : BaseGraphEntity, new();
     }
 }
