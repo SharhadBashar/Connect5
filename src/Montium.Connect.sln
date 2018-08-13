@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Montrium.Connect.ClinicalDirectory", "Montrium.Connect.ClinicalDirectory\Montrium.Connect.ClinicalDirectory.csproj", "{02FEA021-72C2-410A-A732-1179BFD59494}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2B24FFF7-9537-4CE2-8B0D-966D07129649}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{BF0D100A-FA30-4CB2-B156-5FCA8E1C43BB}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Montrium.Connect.ClinicalDirectory.Tests", "Montrium.Connect.ClinicalDirectory.Tests\Montrium.Connect.ClinicalDirectory.Tests.csproj", "{71439F26-6AC1-4392-8561-B37E13F1EBE6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Montrium.Connect.Collaboration", "Montrium.Connect.Collaboration\Montrium.Connect.Collaboration.csproj", "{115D8086-9E60-4E92-B409-62AA3876ADC2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Montrium.Connect.EventBus", "Montrium.Connect.EventBus\Montrium.Connect.EventBus.csproj", "{715E798E-59CE-4723-8C10-4BF7348E2FC0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Montrium.Connect.EventBusRabbitMQ", "Montrium.Connect.EventBusRabbitMQ\Montrium.Connect.EventBusRabbitMQ.csproj", "{028BAFAF-B07B-429C-B152-86265821AABD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Montrium.Connect.Auth", "Montrium.Connect.Auth\Montrium.Connect.Auth.csproj", "{2A5D44BA-1E2E-43E7-9B9D-EF2A06024D24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02FEA021-72C2-410A-A732-1179BFD59494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02FEA021-72C2-410A-A732-1179BFD59494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02FEA021-72C2-410A-A732-1179BFD59494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02FEA021-72C2-410A-A732-1179BFD59494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B24FFF7-9537-4CE2-8B0D-966D07129649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B24FFF7-9537-4CE2-8B0D-966D07129649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B24FFF7-9537-4CE2-8B0D-966D07129649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B24FFF7-9537-4CE2-8B0D-966D07129649}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71439F26-6AC1-4392-8561-B37E13F1EBE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71439F26-6AC1-4392-8561-B37E13F1EBE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71439F26-6AC1-4392-8561-B37E13F1EBE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71439F26-6AC1-4392-8561-B37E13F1EBE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{115D8086-9E60-4E92-B409-62AA3876ADC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{115D8086-9E60-4E92-B409-62AA3876ADC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{115D8086-9E60-4E92-B409-62AA3876ADC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{115D8086-9E60-4E92-B409-62AA3876ADC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{715E798E-59CE-4723-8C10-4BF7348E2FC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{715E798E-59CE-4723-8C10-4BF7348E2FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{715E798E-59CE-4723-8C10-4BF7348E2FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{715E798E-59CE-4723-8C10-4BF7348E2FC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{028BAFAF-B07B-429C-B152-86265821AABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{028BAFAF-B07B-429C-B152-86265821AABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{028BAFAF-B07B-429C-B152-86265821AABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{028BAFAF-B07B-429C-B152-86265821AABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A5D44BA-1E2E-43E7-9B9D-EF2A06024D24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A5D44BA-1E2E-43E7-9B9D-EF2A06024D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A5D44BA-1E2E-43E7-9B9D-EF2A06024D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A5D44BA-1E2E-43E7-9B9D-EF2A06024D24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BAE9C18-7092-4124-BA96-96593C19B27E}
+	EndGlobalSection
+EndGlobal

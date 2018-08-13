@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  montrium.connect.clinicaldirectory:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  montrium.connect.collaboration:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"

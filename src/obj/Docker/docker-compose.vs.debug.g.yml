@@ -1,0 +1,41 @@
+version: '3.4'
+
+services:
+  montrium.connect.clinicaldirectory:
+    image: montriumconnectclinicaldirectory:dev
+    build:
+      target: base
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages
+    volumes:
+      - C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory:/app
+      - C:\Users\sbashar\vsdbg\vs2017u5:/remote_debugger:ro
+      - C:\Users\sbashar\.nuget\packages\:/root/.nuget/packages:ro
+      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages --additionalProbingPath /root/.nuget/fallbackpackages  bin/Debug/netcoreapp2.1/Montrium.Connect.ClinicalDirectory.dll"
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/bash -c \"if PID=$$(pidof -x dotnet); then kill $$PID; fi\""
+
+  montrium.connect.collaboration:
+    image: montriumconnectcollaboration:dev
+    build:
+      target: base
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=1
+      - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages
+    volumes:
+      - C:\Users\sbashar\Connect\src\Montrium.Connect.Collaboration:/app
+      - C:\Users\sbashar\vsdbg\vs2017u5:/remote_debugger:ro
+      - C:\Users\sbashar\.nuget\packages\:/root/.nuget/packages:ro
+      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
+    entrypoint: tail -f /dev/null
+    labels:
+      com.microsoft.visualstudio.debuggee.program: "dotnet"
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages --additionalProbingPath /root/.nuget/fallbackpackages  bin/Debug/netcoreapp2.1/Montrium.Connect.Collaboration.dll"
+      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
+      com.microsoft.visualstudio.debuggee.killprogram: "/bin/bash -c \"if PID=$$(pidof -x dotnet); then kill $$PID; fi\""
+

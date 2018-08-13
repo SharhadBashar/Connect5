@@ -1,0 +1,17 @@
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.deps.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.runtimeconfig.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.runtimeconfig.dev.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.csprojAssemblyReference.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.csproj.CoreCompileInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.RazorAssemblyInfo.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.RazorAssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.AssemblyInfoInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.AssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.RazorTargetAssemblyInfo.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.csproj.CopyComplete
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusRabbitMQ\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusRabbitMQ.pdb

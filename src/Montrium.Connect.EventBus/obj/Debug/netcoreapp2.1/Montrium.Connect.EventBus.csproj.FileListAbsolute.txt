@@ -1,0 +1,14 @@
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.deps.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.runtimeconfig.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.runtimeconfig.dev.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.csprojAssemblyReference.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.csproj.CoreCompileInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.RazorAssemblyInfo.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.RazorAssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.AssemblyInfoInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.AssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.RazorTargetAssemblyInfo.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.pdb

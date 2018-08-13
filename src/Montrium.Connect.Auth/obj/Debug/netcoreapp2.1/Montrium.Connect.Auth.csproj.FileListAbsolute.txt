@@ -1,0 +1,13 @@
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\bin\Debug\netcoreapp2.1\Montrium.Connect.Auth.deps.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\bin\Debug\netcoreapp2.1\Montrium.Connect.Auth.runtimeconfig.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\bin\Debug\netcoreapp2.1\Montrium.Connect.Auth.runtimeconfig.dev.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\bin\Debug\netcoreapp2.1\Montrium.Connect.Auth.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\bin\Debug\netcoreapp2.1\Montrium.Connect.Auth.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.csproj.CoreCompileInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.RazorAssemblyInfo.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.RazorAssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.AssemblyInfoInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.AssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.RazorTargetAssemblyInfo.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.pdb

@@ -1,0 +1,17 @@
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.deps.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.runtimeconfig.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.runtimeconfig.dev.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.csprojAssemblyReference.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.csproj.CoreCompileInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.AssemblyInfoInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.AssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.csproj.CopyComplete
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.ClinicalDirectory.Tests.pdb
