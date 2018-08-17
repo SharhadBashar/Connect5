@@ -32,3 +32,23 @@ services:
       #- "./enabled_plugins:/etc/rabbitmq/enabled_plugins"
       #- "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro"
       #- "./autocluster-0.4.1.ez:/usr/lib/rabbitmq/lib/rabbitmq_server-3.5.5/plugins/autocluster-0.4.1.ez"
+  montrium.connect.tasks:
+    image: ${DOCKER_REGISTRY}montriumconnecttasks
+    build:
+      context: .
+      dockerfile: ..\Montrium.Connect.Tasks\Dockerfile
+
+
+  montrium.connect.pdfgeneration:
+    image: ${DOCKER_REGISTRY}montriumconnectpdfgeneration
+    build:
+      context: .
+      dockerfile: ..\Montrium.Connect.PDFGeneration\Dockerfile
+
+
+  montrium.connect.pdf.web:
+    image: ${DOCKER_REGISTRY}montriumconnectpdfweb
+    build:
+      context: .
+      dockerfile: Montrium.Connect.PDF.Web\Dockerfile
+

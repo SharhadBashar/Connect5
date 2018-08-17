@@ -16,7 +16,7 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
      //[Authorize]
     [ApiController]
     [Produces("application/json")]
-    [Route("/api/{parent}/{parentId:Guid}/{child}/{childId:Guid}/[controller]")]
+    [Route("/api/{parent}/{parentId:Guid}/{child}/{childId:Guid}/{relationship}/[controller]")]
     public class ConnectController : Controller
     {
         private readonly IBaseGraphRepository _repository;
@@ -37,27 +37,27 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         [ProducesResponseType(201)]
         [ProducesResponseType(400)] // Bad Request
         [ProducesResponseType(409)] // Conflict - already exists
-        public ActionResult Post([FromRoute]string parent, [FromRoute]string child, [FromRoute]Guid parentId = new Guid(), [FromRoute]Guid childId = new Guid())
+        public ActionResult Post([FromRoute]string parent, [FromRoute]string child, [FromRoute]Guid parentId, [FromRoute]Guid childId, [FromRoute]string relationship)
         {
             if (parent == null || child == null || (parentId == null && childId == null))
             {
                 return BadRequest();
             }
-            if (parent.Equals("UserPermission") && child.Equals("Document"))
+            /*if (parent.Equals("UserPermission") && child.Equals("Document"))
             {
                 //gets all the user security and processzone details
                 int[] userProcessZones;
                 char[] userSecurity;
                 List<Guid> documentsId = new List<Guid>();
                 string userRole = _repository.GetProperty(parentId, "jobRole");
-                userProcessZones = Roles.rolesTable[1].ProcessZone;
-                userSecurity = Roles.rolesTable[1].Security;
+                userProcessZones = Roles.rolesTable[userRole].ProcessZone;
+                userSecurity = Roles.rolesTable[userRole].Security;
                 
                 //Get a list of all documents the user has access to
-                List<Guid> userAccessNodes = _repository.Transverse(parentId, true);
+                List<Guid> userAccessNodes = _repository.Traverse(parentId, true);
                 foreach(Guid id in userAccessNodes)
                 {
-                    List<Guid> nodes = _repository.Transverse(id, true);
+                    List<Guid> nodes = _repository.Traverse(id, true);
                     foreach (Guid nodeId in nodes)
                     {
                         string property = _repository.GetProperty(nodeId, "label");
@@ -80,10 +80,10 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
                         }
                     }
                 }
-            }
+            }*/
 
             //gives users access to studies, countries, sites
-            else if (parent.Equals("UserAccess") && !child.Equals("Document"))
+            if (relationship.Equals("UserAccess") && !child.Equals("Document"))
             {
                 Guid hasEdge = _repository.ReadEdge(parentId, childId);
                 if (hasEdge.Equals(Guid.Empty))
@@ -97,7 +97,6 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
                     try
                     {
                         List<Guid> ids = new List<Guid>();
-                        
                         foreach (Guid id in childIds)
                         {
                             ids = _repository.GetChildNodes(id);
@@ -121,9 +120,14 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             }
             else
             {
-                _repository.CreateEdge(parentId, childId, string.Format("{0}-{1} relationship", parent, child));
+                string parentType = _repository.GetProperty(parentId, "label");
+                string childType = _repository.GetProperty(childId, "label");
+                if ((parentType.ToLower().Equals(parent.ToLower())) && (childType.ToLower().Equals(child.ToLower())))
+                {
+                    _repository.CreateEdge(parentId, childId, string.Format("{0}-{1} " + relationship, parent, child));
+                }
             }
-            //_repository.CreateEdge(parentId, childId, string.Format("{0}-{1} relationship", parent, child));
+            
             return new OkResult();
         }
 
@@ -139,23 +143,28 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(204)] // No Content
         [ProducesResponseType(404)] // Not Found
-        public ActionResult Put([FromRoute]string parent, [FromRoute]string child, [FromRoute]Guid parentId = new Guid(), [FromRoute]Guid childId = new Guid())
+        public ActionResult Put([FromRoute]string parent, [FromRoute]string child, [FromRoute]string relationship, [FromRoute]Guid parentId = new Guid(), [FromRoute]Guid childId = new Guid())
         {
             Guid edgeId = Guid.Empty;
             if (parent == null || child == null || (parentId == null && childId == null))
             {
                 return BadRequest();
             }
-            try
+            string parentType = _repository.GetProperty(parentId, "label");
+            string childType = _repository.GetProperty(childId, "label");
+            if ((parentType.ToLower().Equals(parent.ToLower())) && (childType.ToLower().Equals(child.ToLower())))
             {
-                edgeId = _repository.ReadEdge(parentId, childId);
-                
+                try
+                {
+                    edgeId = _repository.ReadEdge(parentId, childId);
+
+                }
+                catch (NullReferenceException e)
+                {
+                    edgeId = _repository.ReadEdge(childId, parentId);
+                }
+                _repository.UpdateEdge(edgeId, string.Format("Edited {0}-{1} " + relationship, parent, child));
             }
-            catch (NullReferenceException e)
-            {
-                edgeId = _repository.ReadEdge(childId, parentId);
-            }
-            _repository.UpdateEdge(edgeId, string.Format("Edited {0}-{1} relationship", parent, child));
             return new OkResult();
         }
 
@@ -171,7 +180,7 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(204)] // No Content
         [ProducesResponseType(404)] // Not Found
-        public ActionResult Patch([FromRoute]string parent, [FromRoute]string child, [FromRoute]Guid parentId = new Guid(), [FromRoute]Guid childId = new Guid())
+        public ActionResult Patch([FromRoute]string parent, [FromRoute]string child, [FromRoute]string relationship, [FromRoute]Guid parentId = new Guid(), [FromRoute]Guid childId = new Guid())
         {
             Guid edgeId = Guid.Empty;
             if (parent == null || child == null || (parentId == null && childId == null))
@@ -186,7 +195,7 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
             {
                 edgeId = _repository.ReadEdge(childId, parentId);
             }
-            _repository.UpdateEdge(edgeId, string.Format("Edited {0}-{1} relationship", parent, child));
+            _repository.UpdateEdge(edgeId, string.Format("Edited {0}-{1} " + relationship, parent, child));
             return new OkResult();
         }
 
@@ -200,23 +209,65 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(204)] // No Content
         [ProducesResponseType(404)]
-        public ActionResult Delete([FromRoute]Guid parentId = new Guid(), [FromRoute]Guid childId = new Guid())
+        public ActionResult Delete([FromRoute]string parent = null, [FromRoute]string child = null, [FromRoute]string relationship = null, [FromRoute]Guid parentId = new Guid(), [FromRoute]Guid childId = new Guid())
         {
             if (parentId == null && childId == null)
             {
                 return BadRequest();
             }
-            Guid edgeId = Guid.Empty;
-            try
+            Guid edgeId, hasEdge = Guid.Empty;
+            string childType = _repository.GetProperty(childId, "label");
+            
+            if (relationship.Equals("RemoveUserAccess") && (childType.ToLower().Equals(child.ToLower())))
             {
+                List<Guid> childIds = new List<Guid>();
+                childIds.Add(childId);
+                while (childIds.Count > 0)
+                {
+                    try
+                    {
+                        List<Guid> ids = new List<Guid>();
+                        foreach (Guid id in childIds)
+                        {
+                            ids = _repository.GetChildNodes(id);
+                            foreach (Guid individualChildId in ids)
+                            {
+                                edgeId = _repository.ReadEdge(parentId, individualChildId);
+                                _repository.DeleteEdge(edgeId);
+                            }
+                        }
+                        childIds.Clear();
+                        childIds.AddRange(ids);
+                    }
+                    catch (Exception e)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Error: " + e.Message);
+                    }
+                }
                 edgeId = _repository.ReadEdge(parentId, childId);
+                _repository.DeleteEdge(edgeId);
+                return new OkResult();
             }
-            catch (NullReferenceException e)
+
+            else
             {
-                edgeId = _repository.ReadEdge(childId, parentId);
+                string parentType = _repository.GetProperty(parentId, "label");
+                childType = _repository.GetProperty(childId, "label");
+                if ((parentType.ToLower().Equals(parent.ToLower())) && (childType.ToLower().Equals(child.ToLower())))
+                {
+                    try
+                    {
+                        edgeId = _repository.ReadEdge(parentId, childId);
+                    }
+                    catch (NullReferenceException e)
+                    {
+                        edgeId = _repository.ReadEdge(childId, parentId);
+                    }
+                    _repository.DeleteEdge(edgeId);
+                    return new OkResult();
+                }
             }
-            _repository.DeleteEdge(edgeId);
-            return new OkResult();
+            return BadRequest();
         }
     }
 }

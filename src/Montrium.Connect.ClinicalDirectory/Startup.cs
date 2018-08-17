@@ -42,7 +42,6 @@ namespace Montrium.Connect.ClinicalDirectory
             services.AddScoped<IPersonService, PersonService>();
             services.AddMediatR(typeof(CreateStudyCommandHandler));
             services.AddMediatR(typeof(UpdateStudyCommandHandler));
-            services.AddScoped<IProcessZoneService, ProcessZoneService>();
             services.AddScoped<IDocumentService, DocumentService>();
         }
 

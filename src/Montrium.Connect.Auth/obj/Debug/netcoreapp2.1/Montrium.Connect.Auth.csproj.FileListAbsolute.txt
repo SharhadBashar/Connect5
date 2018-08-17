@@ -11,3 +11,4 @@ C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montr
 C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.RazorTargetAssemblyInfo.cache
 C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.dll
 C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.Auth\obj\Debug\netcoreapp2.1\Montrium.Connect.Auth.csprojAssemblyReference.cache

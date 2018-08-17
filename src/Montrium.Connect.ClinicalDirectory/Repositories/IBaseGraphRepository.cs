@@ -5,6 +5,9 @@ using Montrium.Connect.ClinicalDirectory.Models;
 
 namespace Montrium.Connect.ClinicalDirectory.Repositories
 {
+    /// <summary>
+    /// Interface for the repo commands
+    /// </summary>
     public interface IBaseGraphRepository
     {
         //Vertex
@@ -23,7 +26,7 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
 
         //Get properties
         dynamic GetProperty(Guid nodeId, string property);
-        List<Guid> Transverse(Guid nodeId, bool direction);
+        List<Guid> Traverse(Guid nodeId, bool direction);
         List<Guid> GetChildNodes(Guid nodeId);
         ActionResult<IEnumerable<T>> ReadDoc<T>(Guid userId, string permission) where T : BaseGraphEntity, new();
     }

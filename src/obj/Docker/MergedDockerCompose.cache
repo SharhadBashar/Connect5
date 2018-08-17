@@ -1,4 +1,52 @@
 services:
+  montrium.connect.pdf.web:
+    build:
+      context: C:\Users\sbashar\Connect\src
+      dockerfile: Montrium.Connect.PDF.Web\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: montriumconnectpdfweb
+    ports:
+    - published: 55574
+      target: 80
+    - published: 44370
+      target: 443
+    volumes:
+    - C:\Users\sbashar\AppData\Roaming\ASP.NET\Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+    - C:\Users\sbashar\AppData\Roaming\Microsoft\UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+  montrium.connect.pdfgeneration:
+    build:
+      context: C:\Users\sbashar\Connect\src
+      dockerfile: ..\Montrium.Connect.PDFGeneration\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: montriumconnectpdfgeneration
+    ports:
+    - published: 54373
+      target: 80
+    - published: 44399
+      target: 443
+    volumes:
+    - C:\Users\sbashar\AppData\Roaming\ASP.NET\Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+    - C:\Users\sbashar\AppData\Roaming\Microsoft\UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
+  montrium.connect.tasks:
+    build:
+      context: C:\Users\sbashar\Connect\src
+      dockerfile: ..\Montrium.Connect.Tasks\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: montriumconnecttasks
+    ports:
+    - published: 53881
+      target: 80
+    - published: 44364
+      target: 443
+    volumes:
+    - C:\Users\sbashar\AppData\Roaming\ASP.NET\Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+    - C:\Users\sbashar\AppData\Roaming\Microsoft\UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
   rabbitmq:
     environment:
       RABBITMQ_DEFAULT_PASS: rabbitmq

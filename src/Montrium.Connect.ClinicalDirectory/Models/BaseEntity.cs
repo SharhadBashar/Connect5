@@ -22,6 +22,11 @@ namespace Montrium.Connect.ClinicalDirectory.Models
 
         public abstract void Load(Guid id, JObject jo);
 
+        /// <summary>
+        /// Create an item in the Gremlin DB
+        /// </summary>
+        /// <param name="includeId"></param>
+        /// <returns></returns>
         public string ToGremlinPropertyChain(bool includeId)
         {
             string gremlinPropertyChain = string.Empty;

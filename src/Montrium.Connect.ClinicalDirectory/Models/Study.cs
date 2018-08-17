@@ -38,6 +38,11 @@ namespace Montrium.Connect.ClinicalDirectory.Models
         [JsonProperty(PropertyName = "studyDesign")]
         public StudyDesign StudyDesign { get; set; }
 
+        /// <summary>
+        /// Create Study
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="jo"></param>
         public override void Load(Guid id, JObject jo)
         {
             this.Id = id;

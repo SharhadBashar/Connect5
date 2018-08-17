@@ -1947,15 +1947,14 @@
           "lib/netstandard1.4/Microsoft.Azure.KeyVault.WebKey.dll": {}
         }
       },
-      "Microsoft.Azure.ServiceBus/3.0.2": {
+      "Microsoft.Azure.ServiceBus/3.1.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Azure.Amqp": "[2.3.0, 3.0.0)",
           "Microsoft.Azure.Services.AppAuthentication": "[1.0.1, 2.0.0)",
           "Microsoft.IdentityModel.Clients.ActiveDirectory": "[3.17.2, 4.0.0)",
           "System.Diagnostics.DiagnosticSource": "4.4.1",
-          "System.IdentityModel.Tokens.Jwt": "[5.2.2, 6.0.0)",
-          "System.Runtime.Serialization.Xml": "4.3.0"
+          "System.IdentityModel.Tokens.Jwt": "[5.2.2, 6.0.0)"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.Azure.ServiceBus.dll": {}
@@ -3289,10 +3288,11 @@
           "lib/netstandard1.4/Microsoft.Rest.ClientRuntime.Azure.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/0.17.1754972": {
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.0.1916590": {
         "type": "package",
         "build": {
-          "build/_._": {}
+          "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props": {},
+          "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets": {}
         }
       },
       "Microsoft.VisualStudio.Web.BrowserLink/2.1.1": {
@@ -5548,8 +5548,9 @@
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.1.2",
+          "Microsoft.Azure.ServiceBus": "3.1.0",
           "Microsoft.NETCore.App": "2.1.0",
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "0.17.1754972"
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.0.1916590"
         },
         "compile": {
           "bin/placeholder/Montrium.Connect.EventBus.dll": {}
@@ -6981,16 +6982,16 @@
         "microsoft.azure.keyvault.webkey.nuspec"
       ]
     },
-    "Microsoft.Azure.ServiceBus/3.0.2": {
-      "sha512": "1vQbGGmWGp6skP19lDePcZNEF9WarUvP9odWVQMkDJEuthad3wNLrCNE8AW017d7rroyoNd+9VYUU/wqrP2S1w==",
+    "Microsoft.Azure.ServiceBus/3.1.0": {
+      "sha512": "Ig+63JIv0lGMorJ4GKUgFol8Bgl1vJxhLoExcmFJj+gdhseAqret8l/+UdxBsrjDu5X5PttjaqZLh048gxhcrQ==",
       "type": "package",
-      "path": "microsoft.azure.servicebus/3.0.2",
+      "path": "microsoft.azure.servicebus/3.1.0",
       "files": [
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.Azure.ServiceBus.dll",
         "lib/netstandard2.0/Microsoft.Azure.ServiceBus.pdb",
         "lib/netstandard2.0/Microsoft.Azure.ServiceBus.xml",
-        "microsoft.azure.servicebus.3.0.2.nupkg.sha512",
+        "microsoft.azure.servicebus.3.1.0.nupkg.sha512",
         "microsoft.azure.servicebus.nuspec"
       ]
     },
@@ -8528,10 +8529,10 @@
         "microsoft.rest.clientruntime.azure.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/0.17.1754972": {
-      "sha512": "a+hBQSHgVUjiITzM71QyQ+b3usULgZHlZ2EqGIzE9X0E8G0bY7BFzaUNV/J6fGlN69JplylmQ6qJsDlnn08JtQ==",
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.0.1916590": {
+      "sha512": "ATgVprl2wbWCIV2q79OzRdNgM7HtS+GOcHvaKPGdPK5QMGXd7I5SxDCV/ZFe++vJUIGAj7zMz4F3vhS2dNHZkw==",
       "type": "package",
-      "path": "microsoft.visualstudio.azure.containers.tools.targets/0.17.1754972",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.0.1916590",
       "files": [
         ".signature.p7s",
         "build/Container.props",
@@ -8540,51 +8541,23 @@
         "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets",
         "build/ToolsTarget.props",
         "build/ToolsTarget.targets",
-        "microsoft.visualstudio.azure.containers.tools.targets.0.17.1754972.nupkg.sha512",
+        "microsoft.visualstudio.azure.containers.tools.targets.1.0.1916590.nupkg.sha512",
         "microsoft.visualstudio.azure.containers.tools.targets.nuspec",
-        "tools/Microsoft.VisualStudio.Containers.Tools.Common.Package.Contracts.dll",
-        "tools/Microsoft.VisualStudio.Containers.Tools.Common.Package.dll",
         "tools/Microsoft.VisualStudio.Containers.Tools.Common.dll",
         "tools/Microsoft.VisualStudio.Containers.Tools.Tasks.dll",
-        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/cs/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/de/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/de/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/de/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/es/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/es/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/es/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/fr/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/it/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/it/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/it/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/ja/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/ko/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/pl/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/ru/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/tr/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
         "tools/utils/KillProcess.exe",
-        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Common.Package.resources.dll",
-        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll"
       ]
     },
@@ -14175,9 +14148,10 @@
     ".NETCoreApp,Version=v2.1": [
       "Autofac >= 4.8.1",
       "Microsoft.AspNetCore.App >= 2.1.1",
-      "Microsoft.Azure.ServiceBus >= 3.0.2",
+      "Microsoft.Azure.ServiceBus >= 3.1.0",
       "Microsoft.Extensions.Logging >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.0.1916590",
       "Montrium.Connect.EventBus >= 1.0.0"
     ]
   },
@@ -14238,7 +14212,7 @@
           },
           "Microsoft.Azure.ServiceBus": {
             "target": "Package",
-            "version": "[3.0.2, )"
+            "version": "[3.1.0, )"
           },
           "Microsoft.Extensions.Logging": {
             "target": "Package",
@@ -14248,6 +14222,10 @@
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+            "target": "Package",
+            "version": "[1.0.1916590, )"
           }
         },
         "imports": [

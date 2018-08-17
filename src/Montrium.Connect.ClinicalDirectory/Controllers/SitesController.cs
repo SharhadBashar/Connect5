@@ -17,8 +17,6 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
     [Route("/api/[controller]")]
     public class SitesController : Controller
     {
-        private readonly IStudyService _studyService;
-        private readonly ICountryService _countryService;
         private readonly ISiteService _siteService;
 
         /// <summary>
@@ -27,25 +25,20 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         /// <param name="studyService"></param>
         /// <param name="countryService"></param>
         /// <param name="siteService"></param>
-        public SitesController(IStudyService studyService, ICountryService countryService, ISiteService siteService)
+        public SitesController(ISiteService siteService)
         {
-            this._studyService = studyService;
-            this._countryService = countryService;
             this._siteService = siteService;
         }
 
         /// <summary>
         /// Depending on the route matched:
-        ///   Return all Sites, regardless of Study or Country (both Guids will be empty)
-        ///   Return all Sites in a Study, regardless of Country (countryId will be empty)
-        ///   Return all Sites in a Country, regardless of Study (studyId will be empty)
-        ///   Return all Sites in a Study and Country (both Guids will have values
+        ///   Return all Sites
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         // GET api/sites
         [ProducesResponseType(200, Type = typeof(Site))]
-        public ActionResult<IEnumerable<Site>> Get([FromRoute]Guid studyId = new Guid(), [FromRoute]Guid countryId = new Guid())
+        public ActionResult<IEnumerable<Site>> Get()
         {
             // TODO: Handle empty Ids (will tell which route was matched)
             return _siteService.ReadSites();
@@ -53,7 +46,7 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         }
 
         /// <summary>
-        /// Create a new site under a study (update if exists)
+        /// Create a new site
         /// </summary>
         /// <param name="site"></param>
         /// <returns></returns>
@@ -62,7 +55,7 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         [ProducesResponseType(201, Type = typeof(Site))]
         [ProducesResponseType(400)] // Bad Request
         [ProducesResponseType(409)] // Conflict - already exists
-        public ActionResult Post([FromBody]Site site, [FromRoute]Guid studyId = new Guid(), [FromRoute]Guid countryId = new Guid())
+        public ActionResult Post([FromBody]Site site, [FromRoute]Guid studyId = new Guid())
         {
             
             if (site == null)

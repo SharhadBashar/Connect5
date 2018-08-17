@@ -1,0 +1,17 @@
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.deps.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.runtimeconfig.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.runtimeconfig.dev.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.csprojAssemblyReference.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.csproj.CoreCompileInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.RazorAssemblyInfo.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.RazorAssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.AssemblyInfoInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.AssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.RazorTargetAssemblyInfo.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.csproj.CopyComplete
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBusServiceBus\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBusServiceBus.pdb

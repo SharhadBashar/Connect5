@@ -39,6 +39,13 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
                                                     password: settings.Value.graphDbAuthKey);
         }
         /***************************************************************** V E R T E X *****************************************************************/
+        /// <summary>
+        /// Creates a node
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="model"></param>
+        /// <param name="updateIfExists"></param>
+        /// <returns></returns>
         public ActionResult<T> Create<T>(T model, bool updateIfExists = true)
             where T : BaseGraphEntity, new()
         {
@@ -72,7 +79,11 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
            
             return model;
         }
-
+        /// <summary>
+        /// Reads all node
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public ActionResult<IEnumerable<T>> Read<T>()
             where T : BaseGraphEntity, new()
         {
@@ -99,7 +110,12 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
 
             return models;
         }
-
+        /// <summary>
+        /// Reads a node
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult<T> Read<T>(Guid id)
             where T : BaseGraphEntity, new()
         {
@@ -125,6 +141,12 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
             return new NotFoundResult();
         }
 
+        /// <summary>
+        /// Updates a node
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public ActionResult<T> Update<T>(T model)
             where T : BaseGraphEntity, new()
         {
@@ -143,7 +165,7 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
         }
 
         /// <summary>
-        /// 
+        /// deletes a node
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -174,7 +196,7 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
 
         /**************************************************************** E D G E ****************************************************************/
         /// <summary>
-        /// 
+        /// Reads an Edge ID
         /// </summary>
         /// <param name="parentId"></param>
         /// <param name="childId"></param>
@@ -228,7 +250,7 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
 
         
         /// <summary>
-        /// 
+        /// Creates an Edge
         /// </summary>
         /// <param name="parentID"></param>
         /// <param name="childID"></param>
@@ -258,7 +280,7 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
         }
         
         /// <summary>
-        /// 
+        /// Updates an Edge
         /// </summary>
         /// <param name="edgeID"></param>
         /// <param name="newRelationship"></param>
@@ -286,7 +308,7 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
             return new OkResult();
         }
         /// <summary>
-        /// 
+        /// Deletes an Edge
         /// </summary>
         /// <param name="edgeID"></param>
         /// <returns></returns>
@@ -342,7 +364,7 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
         /// <param name="nodeId"></param>
         /// <param name="direction"></param>
         /// <returns></returns>
-        public List<Guid> Transverse(Guid nodeId, bool direction)
+        public List<Guid> Traverse(Guid nodeId, bool direction)
         {
             if (nodeId == null || nodeId == Guid.Empty)
             {
@@ -372,14 +394,12 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
                             idsList.Add(Guid.Parse(id));
                         }
                     }
-                
-
                 return idsList;
             }
         }
 
         /// <summary>
-        /// 
+        /// Gets all child nodes of a node that is not a document
         /// </summary>
         /// <param name="nodeId"></param>
         /// <returns></returns>
@@ -409,23 +429,40 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
             }
         }
 
+        /// <summary>
+        /// Returns the docs based on users Process Zone and permission on those process zone
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="userId"></param>
+        /// <param name="permission"></param>
+        /// <returns></returns>
         public ActionResult<IEnumerable<T>> ReadDoc<T>(Guid userId, string permission)
             where T : BaseGraphEntity, new()
         {
             var models = new List<T>();
-            if (permission.Equals("Read")) { permission = "User R access"; }
-            else if (permission.Equals("Write")) { permission = "User W access"; }
-            else if (permission.Equals("List")) { permission = "User L access"; }
+            char access = ' ';
+            if (permission.Equals("Read")) { access = 'R'; }
+            else if (permission.Equals("Write")) { access = 'W'; }
+            else if (permission.Equals("List")) { access = 'L'; }
+
+            //gets all the user security and processzone details
+            int[] userProcessZones;
+            char[] userSecurity;
+            List<Guid> documentsId = new List<Guid>();
+            string userRole = GetProperty(userId, "jobRole");
+            userProcessZones = Roles.rolesTable[userRole].ProcessZone;
+            userSecurity = Roles.rolesTable[userRole].Security;
+
             var gremlinClient = new GremlinClient(this._graphServer, new GraphSON2Reader(), new GraphSON2Writer(), GremlinClient.GraphSON2MimeType);
             {
                 T temp = new T(); // Just to get the correct label
-                var getDocId = gremlinClient.SubmitAsync<dynamic>($"g.V().hasId('{userId}').outE().haslabel('{permission}').inV().id()");
-                getDocId.Wait();
-                foreach (string docId in getDocId.Result)
-                {                   
-                    var task = gremlinClient.SubmitAsync<dynamic>($"g.V().hasId('{Guid.Parse(docId)}')");
-                    task.Wait();           
-                    foreach (var result in task.Result)
+                var getAllDocs = gremlinClient.SubmitAsync<dynamic>($"g.V().hasId('{userId}').outE().hasLabel('User access').inV().outE().inV().hasLabel('document')");
+                getAllDocs.Wait();
+                foreach (var result in getAllDocs.Result)
+                {  
+                    int docProcessZone = Convert.ToInt32(GetProperty(Guid.Parse(result["id"]), "processZone"));
+                    int pos = Array.IndexOf(userProcessZones, docProcessZone);
+                    if (pos > -1 && (userSecurity[pos] == access || access.Equals('L')))
                     {
                         T s = new T();
                         s.Load(new Guid(result["id"]), JObject.Parse(JsonConvert.SerializeObject(result["properties"])));
@@ -433,8 +470,8 @@ namespace Montrium.Connect.ClinicalDirectory.Repositories
                     }
                 }
             }
-
             return models;
         }
+
     }
 }

@@ -17,7 +17,6 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
     [Route("/api/[controller]")]
     public class CountriesController : Controller
     {
-        private readonly IStudyService _studyService;
         private readonly ICountryService _countryService;
 
         /// <summary>
@@ -25,9 +24,8 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         /// </summary>
         /// <param name="studyService"></param>
         /// <param name="countryService"></param>
-        public CountriesController(IStudyService studyService, ICountryService countryService)
+        public CountriesController(ICountryService countryService)
         {
-            this._studyService = studyService;
             this._countryService = countryService;
         }
 

@@ -10,9 +10,15 @@ namespace Montrium.Connect.ClinicalDirectory.Models
 
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
+
         [JsonProperty(PropertyName = "iSO")]
         public string ISO { get; set; }
 
+        /// <summary>
+        /// Create Country
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="jo"></param>
         public override void Load(Guid id, JObject jo)
         {
             this.Id = id;

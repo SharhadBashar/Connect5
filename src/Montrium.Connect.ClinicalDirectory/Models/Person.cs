@@ -15,6 +15,7 @@ namespace Montrium.Connect.ClinicalDirectory.Models
         [JsonProperty(PropertyName = "status")]
         public PersonStatus Status { get; set; }
 
+        [Required]//If it is empty or null, wont work
         [JsonProperty(PropertyName = "jobRole")]
         public string JobRole { get; set; }
 
@@ -30,6 +31,11 @@ namespace Montrium.Connect.ClinicalDirectory.Models
         [JsonProperty(PropertyName = "upn")]
         public string UPN { get; set; }
 
+        /// <summary>
+        /// Create Person
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="jo"></param>
         public override void Load(Guid id, JObject jo)
         {
             this.Id = id; // new Guid((string)jo["id"][0]["value"]);

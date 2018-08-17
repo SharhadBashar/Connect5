@@ -1,0 +1,14 @@
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\bin\Debug\netcoreapp2.1\Montrium.Connect.Tasks.deps.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\bin\Debug\netcoreapp2.1\Montrium.Connect.Tasks.runtimeconfig.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\bin\Debug\netcoreapp2.1\Montrium.Connect.Tasks.runtimeconfig.dev.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\bin\Debug\netcoreapp2.1\Montrium.Connect.Tasks.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\bin\Debug\netcoreapp2.1\Montrium.Connect.Tasks.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\obj\Debug\netcoreapp2.1\Montrium.Connect.Tasks.csprojAssemblyReference.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\obj\Debug\netcoreapp2.1\Montrium.Connect.Tasks.csproj.CoreCompileInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\obj\Debug\netcoreapp2.1\Montrium.Connect.Tasks.RazorAssemblyInfo.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\obj\Debug\netcoreapp2.1\Montrium.Connect.Tasks.RazorAssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\obj\Debug\netcoreapp2.1\Montrium.Connect.Tasks.AssemblyInfoInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\obj\Debug\netcoreapp2.1\Montrium.Connect.Tasks.AssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\obj\Debug\netcoreapp2.1\Montrium.Connect.Tasks.RazorTargetAssemblyInfo.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\obj\Debug\netcoreapp2.1\Montrium.Connect.Tasks.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.Tasks\obj\Debug\netcoreapp2.1\Montrium.Connect.Tasks.pdb

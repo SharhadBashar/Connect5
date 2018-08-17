@@ -1,0 +1,17 @@
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.deps.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.runtimeconfig.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.runtimeconfig.dev.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\bin\Debug\netcoreapp2.1\Montrium.Connect.EventBus.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.csprojAssemblyReference.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.csproj.CoreCompileInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.AssemblyInfoInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.AssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.csproj.CopyComplete
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.EventBus.Tests\obj\Debug\netcoreapp2.1\Montrium.Connect.EventBus.Tests.pdb

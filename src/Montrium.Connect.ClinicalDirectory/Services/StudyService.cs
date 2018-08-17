@@ -22,22 +22,39 @@ namespace Montrium.Connect.ClinicalDirectory.Services
     {
         private readonly IBaseGraphRepository _repository;
 
+        /// <summary>
+        /// Initiate Repository
+        /// </summary>
+        /// <param name="repository"></param>
         public StudyService(IBaseGraphRepository repository)
         {
             this._repository = repository;
         }
 
-//        [Authorize(Policy = "CanManageProduct")]
+        /// <summary>
+        /// Creates a study
+        /// </summary>
+        /// <param name="study"></param>
+        /// <returns></returns>
         public async Task<ActionResult<Study>> CreateStudy(Study study)
         {
             return this._repository.Create<Study>(study);
         }
 
+        /// <summary>
+        /// Reads a study
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult<Study> ReadStudy(Guid id)
         {
             return this._repository.Read<Study>(id);
         }
 
+        /// <summary>
+        /// Reads all studies
+        /// </summary>
+        /// <returns></returns>
         public ActionResult<IEnumerable<Study>> ReadStudies()
         {
             return this._repository.Read<Study>();
@@ -53,11 +70,21 @@ namespace Montrium.Connect.ClinicalDirectory.Services
             return this._repository.Read<Study>();
         }
 
+        /// <summary>
+        /// updates a study
+        /// </summary>
+        /// <param name="study"></param>
+        /// <returns></returns>
         public async Task<ActionResult<Study>> UpdateStudy(Study study)
         {
             return  this._repository.Update<Study>(study);
         }
 
+        /// <summary>
+        /// deletes a study
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult DeleteStudy(Guid id)
         {
             return this._repository.Delete<Study>(id);

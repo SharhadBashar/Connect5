@@ -1,0 +1,9 @@
+C:\Users\sbashar\Connect\src\Montrium.Connect.PDF.Shared\bin\Debug\netstandard2.0\Montrium.Connect.PDF.Shared.deps.json
+C:\Users\sbashar\Connect\src\Montrium.Connect.PDF.Shared\bin\Debug\netstandard2.0\Montrium.Connect.PDF.Shared.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.PDF.Shared\obj\Debug\netstandard2.0\Montrium.Connect.PDF.Shared.csprojAssemblyReference.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.PDF.Shared\obj\Debug\netstandard2.0\Montrium.Connect.PDF.Shared.csproj.CoreCompileInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.PDF.Shared\obj\Debug\netstandard2.0\Montrium.Connect.PDF.Shared.AssemblyInfoInputs.cache
+C:\Users\sbashar\Connect\src\Montrium.Connect.PDF.Shared\obj\Debug\netstandard2.0\Montrium.Connect.PDF.Shared.AssemblyInfo.cs
+C:\Users\sbashar\Connect\src\Montrium.Connect.PDF.Shared\bin\Debug\netstandard2.0\Montrium.Connect.PDF.Shared.pdb
+C:\Users\sbashar\Connect\src\Montrium.Connect.PDF.Shared\obj\Debug\netstandard2.0\Montrium.Connect.PDF.Shared.dll
+C:\Users\sbashar\Connect\src\Montrium.Connect.PDF.Shared\obj\Debug\netstandard2.0\Montrium.Connect.PDF.Shared.pdb

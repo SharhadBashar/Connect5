@@ -1,13 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "88faa631c046124699e208ecf5a48da08ba1acc4"
+    "signature": "089342e9e8ec50d8eb8cc8f8240c43d4b7fd6aab"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "Montrium.Connect.ClinicalDirectory.Tests/1.0.0": {
         "dependencies": {
+          "Microsoft.Azure.ServiceBus": "3.1.0",
           "Microsoft.NET.Test.Sdk": "15.8.0",
           "Microsoft.NETCore.App": "2.1.0",
           "Montrium.Connect.ClinicalDirectory": "1.0.0",
@@ -47,6 +48,30 @@
           "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {
             "assemblyVersion": "5.0.2.0",
             "fileVersion": "5.0.2.0"
+          }
+        }
+      },
+      "Microsoft.Azure.Amqp/2.3.0": {
+        "dependencies": {
+          "System.Net.WebSockets.Client": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.Azure.Amqp.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        }
+      },
+      "Microsoft.Azure.ServiceBus/3.1.0": {
+        "dependencies": {
+          "Microsoft.Azure.Amqp": "2.3.0",
+          "Microsoft.IdentityModel.Clients.ActiveDirectory": "3.17.2",
+          "System.IdentityModel.Tokens.Jwt": "5.2.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Azure.ServiceBus.dll": {
+            "assemblyVersion": "3.1.0.0",
+            "fileVersion": "3.1.0.0"
           }
         }
       },
@@ -90,81 +115,43 @@
         }
       },
       "Microsoft.CodeQuality.Analyzers/2.6.1": {},
-      "Microsoft.Data.Edm/5.8.2": {
-        "runtime": {
-          "lib/netstandard1.1/Microsoft.Data.Edm.dll": {
-            "assemblyVersion": "5.8.1.0",
-            "fileVersion": "5.8.1.62767"
-          }
+      "Microsoft.IdentityModel.Clients.ActiveDirectory/3.17.2": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "System.Runtime.Serialization.Json": "4.3.0"
         },
-        "resources": {
-          "lib/netstandard1.1/de/Microsoft.Data.Edm.resources.dll": {
-            "locale": "de"
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {
+            "assemblyVersion": "3.17.2.31801",
+            "fileVersion": "3.17.41115.111"
           },
-          "lib/netstandard1.1/es/Microsoft.Data.Edm.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard1.1/fr/Microsoft.Data.Edm.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard1.1/it/Microsoft.Data.Edm.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard1.1/ja/Microsoft.Data.Edm.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard1.1/ko/Microsoft.Data.Edm.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard1.1/ru/Microsoft.Data.Edm.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard1.1/zh-Hans/Microsoft.Data.Edm.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard1.1/zh-Hant/Microsoft.Data.Edm.resources.dll": {
-            "locale": "zh-Hant"
+          "lib/netstandard1.3/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {
+            "assemblyVersion": "3.17.2.31801",
+            "fileVersion": "3.17.41115.111"
           }
         }
       },
-      "Microsoft.Data.OData/5.8.2": {
+      "Microsoft.IdentityModel.Logging/5.2.2": {
         "dependencies": {
-          "Microsoft.Data.Edm": "5.8.2",
-          "System.Spatial": "5.8.2"
+          "NETStandard.Library": "2.0.3"
         },
         "runtime": {
-          "lib/netstandard1.1/Microsoft.Data.OData.dll": {
-            "assemblyVersion": "5.8.1.0",
-            "fileVersion": "5.8.1.62767"
+          "lib/netstandard1.4/Microsoft.IdentityModel.Logging.dll": {
+            "assemblyVersion": "5.2.2.0",
+            "fileVersion": "5.2.2.50423"
           }
+        }
+      },
+      "Microsoft.IdentityModel.Tokens/5.2.2": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "5.2.2",
+          "NETStandard.Library": "2.0.3",
+          "System.Runtime.Serialization.Xml": "4.3.0"
         },
-        "resources": {
-          "lib/netstandard1.1/de/Microsoft.Data.OData.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard1.1/es/Microsoft.Data.OData.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard1.1/fr/Microsoft.Data.OData.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard1.1/it/Microsoft.Data.OData.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard1.1/ja/Microsoft.Data.OData.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard1.1/ko/Microsoft.Data.OData.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard1.1/ru/Microsoft.Data.OData.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard1.1/zh-Hans/Microsoft.Data.OData.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard1.1/zh-Hant/Microsoft.Data.OData.resources.dll": {
-            "locale": "zh-Hant"
+        "runtime": {
+          "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll": {
+            "assemblyVersion": "5.2.2.0",
+            "fileVersion": "5.2.2.50423"
           }
         }
       },
@@ -205,6 +192,7 @@
           "System.Diagnostics.TextWriterTraceListener": "4.0.0",
           "System.Diagnostics.TraceSource": "4.0.0",
           "System.Runtime.Loader": "4.0.0",
+          "System.Runtime.Serialization.Json": "4.3.0",
           "System.Xml.XPath.XmlDocument": "4.0.1"
         },
         "runtime": {
@@ -531,6 +519,14 @@
           }
         }
       },
+      "Microsoft.WindowsAzure.ConfigurationManager/3.2.3": {
+        "runtime": {
+          "lib/net40/Microsoft.WindowsAzure.Configuration.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.2.3.0"
+          }
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.1.0"
@@ -549,7 +545,7 @@
       },
       "Streamstone/2.1.0": {
         "dependencies": {
-          "WindowsAzure.Storage": "8.6.0"
+          "WindowsAzure.Storage": "9.3.1"
         },
         "runtime": {
           "lib/netstandard2.0/Streamstone.dll": {
@@ -651,6 +647,18 @@
           }
         }
       },
+      "System.IdentityModel.Tokens.Jwt/5.2.2": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "5.2.2",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.dll": {
+            "assemblyVersion": "5.2.2.0",
+            "fileVersion": "5.2.2.50423"
+          }
+        }
+      },
       "System.Linq.Parallel/4.3.0": {},
       "System.Net.WebHeaderCollection/4.3.0": {},
       "System.Net.WebSockets/4.3.0": {},
@@ -671,44 +679,23 @@
           }
         }
       },
-      "System.Runtime.Loader/4.0.0": {},
-      "System.Spatial/5.8.2": {
-        "runtime": {
-          "lib/netstandard1.1/System.Spatial.dll": {
-            "assemblyVersion": "5.8.1.0",
-            "fileVersion": "5.8.1.62767"
-          }
-        },
-        "resources": {
-          "lib/netstandard1.1/de/System.Spatial.resources.dll": {
-            "locale": "de"
-          },
-          "lib/netstandard1.1/es/System.Spatial.resources.dll": {
-            "locale": "es"
-          },
-          "lib/netstandard1.1/fr/System.Spatial.resources.dll": {
-            "locale": "fr"
-          },
-          "lib/netstandard1.1/it/System.Spatial.resources.dll": {
-            "locale": "it"
-          },
-          "lib/netstandard1.1/ja/System.Spatial.resources.dll": {
-            "locale": "ja"
-          },
-          "lib/netstandard1.1/ko/System.Spatial.resources.dll": {
-            "locale": "ko"
-          },
-          "lib/netstandard1.1/ru/System.Spatial.resources.dll": {
-            "locale": "ru"
-          },
-          "lib/netstandard1.1/zh-Hans/System.Spatial.resources.dll": {
-            "locale": "zh-Hans"
-          },
-          "lib/netstandard1.1/zh-Hant/System.Spatial.resources.dll": {
-            "locale": "zh-Hant"
-          }
+      "System.Private.DataContractSerialization/4.3.0": {
+        "dependencies": {
+          "System.Xml.XmlSerializer": "4.3.0"
         }
       },
+      "System.Runtime.Loader/4.0.0": {},
+      "System.Runtime.Serialization.Json/4.3.0": {
+        "dependencies": {
+          "System.Private.DataContractSerialization": "4.3.0"
+        }
+      },
+      "System.Runtime.Serialization.Xml/4.3.0": {
+        "dependencies": {
+          "System.Private.DataContractSerialization": "4.3.0"
+        }
+      },
+      "System.Xml.XmlSerializer/4.3.0": {},
       "System.Xml.XPath.XmlDocument/4.0.1": {
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {
@@ -718,16 +705,14 @@
         }
       },
       "Text.Analyzers/2.6.1": {},
-      "WindowsAzure.Storage/8.6.0": {
+      "WindowsAzure.Storage/9.3.1": {
         "dependencies": {
-          "Microsoft.Data.OData": "5.8.2",
-          "NETStandard.Library": "2.0.3",
-          "System.Spatial": "5.8.2"
+          "NETStandard.Library": "2.0.3"
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {
-            "assemblyVersion": "8.6.0.0",
-            "fileVersion": "8.6.0.0"
+            "assemblyVersion": "9.3.1.0",
+            "fileVersion": "9.3.1.0"
           }
         }
       },
@@ -793,10 +778,13 @@
           "Gremlin.Net": "3.3.3",
           "MediatR": "5.0.1",
           "MediatR.Extensions.Microsoft.DependencyInjection": "5.0.2",
+          "Microsoft.Azure.ServiceBus": "3.1.0",
           "Microsoft.CodeAnalysis.FxCopAnalyzers": "2.6.1",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1",
-          "Streamstone": "2.1.0"
+          "Microsoft.WindowsAzure.ConfigurationManager": "3.2.3",
+          "Streamstone": "2.1.0",
+          "WindowsAzure.Storage": "9.3.1"
         },
         "runtime": {
           "Montrium.Connect.ClinicalDirectory.dll": {}
@@ -830,6 +818,20 @@
       "sha512": "sha512-iXxDCj08hO2aD/6LDk1VPy+Vrc+Ei3NIEVLZ08Mk2EcTJjUq411dGm0f+pkRWFmOVvXwyYVv3Fd+F5vV5OwiXg==",
       "path": "mediatr.extensions.microsoft.dependencyinjection/5.0.2",
       "hashPath": "mediatr.extensions.microsoft.dependencyinjection.5.0.2.nupkg.sha512"
+    },
+    "Microsoft.Azure.Amqp/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0Tj+THewpBtT+B9vblBXM9AfK6R0iKTGl4Yvl8fSzEtqU9eplZhJX/fkd3LctE1t+7R1V5VSwIZumgd0iMaG3w==",
+      "path": "microsoft.azure.amqp/2.3.0",
+      "hashPath": "microsoft.azure.amqp.2.3.0.nupkg.sha512"
+    },
+    "Microsoft.Azure.ServiceBus/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ig+63JIv0lGMorJ4GKUgFol8Bgl1vJxhLoExcmFJj+gdhseAqret8l/+UdxBsrjDu5X5PttjaqZLh048gxhcrQ==",
+      "path": "microsoft.azure.servicebus/3.1.0",
+      "hashPath": "microsoft.azure.servicebus.3.1.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
@@ -866,19 +868,26 @@
       "path": "microsoft.codequality.analyzers/2.6.1",
       "hashPath": "microsoft.codequality.analyzers.2.6.1.nupkg.sha512"
     },
-    "Microsoft.Data.Edm/5.8.2": {
+    "Microsoft.IdentityModel.Clients.ActiveDirectory/3.17.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-P/d8DxA6MFHroBEn/jW0LMQSIKnsRRibrZtRCLfov2boQfrQ1R1BVgkJ5oIhcQsOm0l4POv+I2ny6RBsclNbOw==",
-      "path": "microsoft.data.edm/5.8.2",
-      "hashPath": "microsoft.data.edm.5.8.2.nupkg.sha512"
+      "sha512": "sha512-aJinZQ8+48DSdN521xo1jRVXWmyoJIggq6mygBis/QAqiWwe/nZ4U21JfsYJMGdyu0NpGCDuyKUQOCod1EoA0A==",
+      "path": "microsoft.identitymodel.clients.activedirectory/3.17.2",
+      "hashPath": "microsoft.identitymodel.clients.activedirectory.3.17.2.nupkg.sha512"
     },
-    "Microsoft.Data.OData/5.8.2": {
+    "Microsoft.IdentityModel.Logging/5.2.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oEIUtXcRiKogF0yZxA+QdgxoBJ34989qL/5xOSrTfxAhzNJV5Hw6DRdWgUCpeXFMoJUQx7ptbHCN+My/LCQfsg==",
-      "path": "microsoft.data.odata/5.8.2",
-      "hashPath": "microsoft.data.odata.5.8.2.nupkg.sha512"
+      "sha512": "sha512-rBXNKl47ExFyZGNCOU4CimiiC+FenfmIwovu0h/0MdgEvSONO0J14Pidjj7PfMoMcvJVPIbP5Z/lAQsjgagJNw==",
+      "path": "microsoft.identitymodel.logging/5.2.2",
+      "hashPath": "microsoft.identitymodel.logging.5.2.2.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Tokens/5.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A8UR+TQEG28zft8TGXYdvbHAwvK31dVT76isBa7jwD190TsMMaL0ttivABKH8upabvezHQrAmmQc6bGwQGJeAw==",
+      "path": "microsoft.identitymodel.tokens/5.2.2",
+      "hashPath": "microsoft.identitymodel.tokens.5.2.2.nupkg.sha512"
     },
     "Microsoft.NET.Test.Sdk/15.8.0": {
       "type": "package",
@@ -1013,6 +1022,13 @@
       "path": "microsoft.visualstudio.web.codegenerators.mvc/2.1.1",
       "hashPath": "microsoft.visualstudio.web.codegenerators.mvc.2.1.1.nupkg.sha512"
     },
+    "Microsoft.WindowsAzure.ConfigurationManager/3.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pAFC2gHAuubgaw7hqSDuaEVMqip/Z0niCFVpUZ1Hg+HUw4BuMQDZnNXCm+S9SU2zPwaH8l8hXaxDXSQI438gMA==",
+      "path": "microsoft.windowsazure.configurationmanager/3.2.3",
+      "hashPath": "microsoft.windowsazure.configurationmanager.3.2.3.nupkg.sha512"
+    },
     "NETStandard.Library/2.0.3": {
       "type": "package",
       "serviceable": true,
@@ -1118,6 +1134,13 @@
       "path": "system.diagnostics.tracesource/4.0.0",
       "hashPath": "system.diagnostics.tracesource.4.0.0.nupkg.sha512"
     },
+    "System.IdentityModel.Tokens.Jwt/5.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-stcPUDksxucDlowf2Q3DJiSbMfLP2jCgEdJ+44XD11YGjdE1uO8fRd4cAbS4Rf/B9FOZu9k66YxgicNTN3f92Q==",
+      "path": "system.identitymodel.tokens.jwt/5.2.2",
+      "hashPath": "system.identitymodel.tokens.jwt.5.2.2.nupkg.sha512"
+    },
     "System.Linq.Parallel/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1146,6 +1169,13 @@
       "path": "system.net.websockets.client/4.3.0",
       "hashPath": "system.net.websockets.client.4.3.0.nupkg.sha512"
     },
+    "System.Private.DataContractSerialization/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yDaJ2x3mMmjdZEDB4IbezSnCsnjQ4BxinKhRAaP6kEgL6Bb6jANWphs5SzyD8imqeC/3FxgsuXT6ykkiH1uUmA==",
+      "path": "system.private.datacontractserialization/4.3.0",
+      "hashPath": "system.private.datacontractserialization.4.3.0.nupkg.sha512"
+    },
     "System.Runtime.Loader/4.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1153,12 +1183,26 @@
       "path": "system.runtime.loader/4.0.0",
       "hashPath": "system.runtime.loader.4.0.0.nupkg.sha512"
     },
-    "System.Spatial/5.8.2": {
+    "System.Runtime.Serialization.Json/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0RfZZJ8RlrfjoBPAF6pczX4Nd2kyLM8EX1PCP5Rqs/jOhJBUPYhpXjIsVAYN7kocj9IJ9XoJWAxWgXIDtJY2Ag==",
-      "path": "system.spatial/5.8.2",
-      "hashPath": "system.spatial.5.8.2.nupkg.sha512"
+      "sha512": "sha512-CpVfOH0M/uZ5PH+M9+Gu56K0j9lJw3M+PKRegTkcrY/stOIvRUeonggxNrfBYLA5WOHL2j15KNJuTuld3x4o9w==",
+      "path": "system.runtime.serialization.json/4.3.0",
+      "hashPath": "system.runtime.serialization.json.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime.Serialization.Xml/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nUQx/5OVgrqEba3+j7OdiofvVq9koWZAC7Z3xGI8IIViZqApWnZ5+lLcwYgTlbkobrl/Rat+Jb8GeD4WQESD2A==",
+      "path": "system.runtime.serialization.xml/4.3.0",
+      "hashPath": "system.runtime.serialization.xml.4.3.0.nupkg.sha512"
+    },
+    "System.Xml.XmlSerializer/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
+      "path": "system.xml.xmlserializer/4.3.0",
+      "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "System.Xml.XPath.XmlDocument/4.0.1": {
       "type": "package",
@@ -1174,12 +1218,12 @@
       "path": "text.analyzers/2.6.1",
       "hashPath": "text.analyzers.2.6.1.nupkg.sha512"
     },
-    "WindowsAzure.Storage/8.6.0": {
+    "WindowsAzure.Storage/9.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uzcmNJwki+yMxEGU8QcnVTKJcM/L5E4oCqoZCQ9uhPfNvKT4CxcGe2qXho7jMRNuZmz69uvcbv7yGv0oMEAOxQ==",
-      "path": "windowsazure.storage/8.6.0",
-      "hashPath": "windowsazure.storage.8.6.0.nupkg.sha512"
+      "sha512": "sha512-s3BpEZRQD9lNKlraWEfbzRLhRUgEl3TMHXsTiHJACwqGJaYEv4kHfm8luxmqJUMZ18hqi3x4XgpwNZ+6E1vBFQ==",
+      "path": "windowsazure.storage/9.3.1",
+      "hashPath": "windowsazure.storage.9.3.1.nupkg.sha512"
     },
     "xunit/2.4.0": {
       "type": "package",

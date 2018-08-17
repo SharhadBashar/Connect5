@@ -24,6 +24,11 @@ namespace Montrium.Connect.ClinicalDirectory.Models
         [JsonProperty(PropertyName = "therapeuticArea")]
         public TherapeuticArea TherapeuticArea { get; set; }
 
+        /// <summary>
+        /// Create Product
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="jo"></param>
         public override void Load(Guid id, JObject jo)
         {
             this.Id = id;

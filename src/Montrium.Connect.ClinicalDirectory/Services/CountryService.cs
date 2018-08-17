@@ -21,40 +21,62 @@ namespace Montrium.Connect.ClinicalDirectory.Services
         private readonly IAuthorizationService _authorizationService;
         private readonly IBaseGraphRepository _repository;
 
+        /// <summary>
+        /// Initiate Repository
+        /// </summary>
+        /// <param name="repository"></param>
         public CountryService(IBaseGraphRepository repository)
         {
             this._repository = repository;
         }
-
-//        [Authorize(Policy = "CanManageProgram")]
+        
+        /// <summary>
+        /// Create Country
+        /// </summary>
+        /// <param name="country"></param>
+        /// <returns></returns>
         public ActionResult<Country> CreateCountry(Country country)
         {
             return this._repository.Create(country);
         }
 
+        /// <summary>
+        /// Read a country
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult<Country> ReadCountry(Guid id)
         {
             return this._repository.Read<Country>(id);
         }
 
+        /// <summary>
+        /// Read countries
+        /// </summary>
+        /// <returns></returns>
         public ActionResult<IEnumerable<Country>> ReadCountries()
         {
             return this._repository.Read<Country>();
         }
 
+        /// <summary>
+        /// Update Countries
+        /// </summary>
+        /// <param name="country"></param>
+        /// <returns></returns>
         public ActionResult<Country> UpdateCountry(Country country)
         {
             return this._repository.Update<Country>(country);
         }
 
+        /// <summary>
+        /// Delete Country
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult DeleteCountry(Guid id)
         {
             return this._repository.Delete<Country>(id);
-        }
-
-        public ActionResult ConnectCountry(Guid parentID, Guid childID, string relationship)
-        {
-            return this._repository.CreateEdge(parentID, childID, relationship);
         }
     }
 }

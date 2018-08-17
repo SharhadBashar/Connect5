@@ -19,6 +19,11 @@ namespace Montrium.Connect.ClinicalDirectory.Models
         [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
 
+        /// <summary>
+        /// Create Site
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="jo"></param>
         public override void Load(Guid id, JObject jo)
         {
             this.Id = id;

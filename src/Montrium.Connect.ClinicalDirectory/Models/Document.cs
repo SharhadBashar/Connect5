@@ -32,6 +32,11 @@ namespace Montrium.Connect.ClinicalDirectory.Models
         [JsonProperty(PropertyName = "processZone")]
         public int ProcessZone { get; set; }
 
+        /// <summary>
+        /// Create Document
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="jo"></param>
         public override void Load(Guid id, JObject jo)
         {
             this.Id = id; // new Guid((string)jo["id"][0]["value"]);

@@ -8,7 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.2" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="3.1.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />

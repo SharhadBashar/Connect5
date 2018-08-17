@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>8535dfbc-4d4b-48ad-a506-bdb4820ee375</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlRenderer.PdfSharp" Version="1.5.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.1916590" />
+    <PackageReference Include="Microsoft.WindowsAzure.ConfigurationManager" Version="3.2.3" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Montrium.Connect.PDF.Shared\Montrium.Connect.PDF.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

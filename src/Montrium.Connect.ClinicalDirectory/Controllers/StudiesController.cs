@@ -17,7 +17,7 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
     //[Authorize]
     [ApiController]
     [Produces("application/json")]
-    [Route("api/[controller]")]
+    [Route("/api/[controller]")]
     public class StudiesController : Controller
     {
         private readonly IStudyService _studyService;

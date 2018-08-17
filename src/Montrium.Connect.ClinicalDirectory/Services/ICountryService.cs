@@ -12,6 +12,5 @@ namespace Montrium.Connect.ClinicalDirectory.Services
         ActionResult<IEnumerable<Country>> ReadCountries();
         ActionResult<Country> UpdateCountry(Country country);
         ActionResult DeleteCountry(Guid id);
-        ActionResult ConnectCountry(Guid parentID, Guid childID, string relationship);
     }
 }

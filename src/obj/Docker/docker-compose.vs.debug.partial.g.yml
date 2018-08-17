@@ -1,39 +1,20 @@
 version: '3.4'
 
 services:
-  montrium.connect.clinicaldirectory:
-    image: montriumconnectclinicaldirectory:dev
+  montrium.connect.pdf.web:
+    image: montriumconnectpdfweb:dev
     build:
       target: base
     environment:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
-      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_montrium.connect.clinicaldirectory$
+      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_montrium.connect.pdf.web$
     volumes:
-      - C:\Users\sbashar\Connect\src\Montrium.Connect.ClinicalDirectory:/app
+      - C:\Users\sbashar\Connect\src\Montrium.Connect.PDF.Web:/app
       - C:\Users\sbashar\vsdbg\vs2017u5:/remote_debugger:ro
-#$nuget_volume_mapping_montrium.connect.clinicaldirectory$
+#$nuget_volume_mapping_montrium.connect.pdf.web$
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_montrium.connect.clinicaldirectory$ bin/Debug/netcoreapp2.1/Montrium.Connect.ClinicalDirectory.dll"
+      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_montrium.connect.pdf.web$ bin/Debug/netcoreapp2.1/Montrium.Connect.PDF.Web.dll"
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/bash -c \"if PID=$$(pidof -x dotnet); then kill $$PID; fi\""
-
-  montrium.connect.collaboration:
-    image: montriumconnectcollaboration:dev
-    build:
-      target: base
-    environment:
-      - DOTNET_USE_POLLING_FILE_WATCHER=1
-      #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_montrium.connect.collaboration$
-    volumes:
-      - C:\Users\sbashar\Connect\src\Montrium.Connect.Collaboration:/app
-      - C:\Users\sbashar\vsdbg\vs2017u5:/remote_debugger:ro
-#$nuget_volume_mapping_montrium.connect.collaboration$
-    entrypoint: tail -f /dev/null
-    labels:
-      com.microsoft.visualstudio.debuggee.program: "dotnet"
-      #com.microsoft.visualstudio.debuggee.arguments: " $debuggee_arguments_probing_paths_montrium.connect.collaboration$ bin/Debug/netcoreapp2.1/Montrium.Connect.Collaboration.dll"
-      com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
-      com.microsoft.visualstudio.debuggee.killprogram: "/bin/bash -c \"if PID=$$(pidof -x dotnet); then kill $$PID; fi\""
-

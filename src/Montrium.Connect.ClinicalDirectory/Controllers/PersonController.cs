@@ -18,9 +18,6 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
     
     public class PersonController : Controller
     {
-        private readonly IStudyService _studyService;
-        private readonly ICountryService _countryService;
-        private readonly ISiteService _siteService;
         private readonly IPersonService _personService;
 
         /// <summary>
@@ -30,15 +27,12 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         /// <param name="countryService"></param>
         /// <param name="siteService"></param>
         /// <param name="personService"></param>
-        public PersonController(IStudyService studyService, ICountryService countryService, ISiteService siteService, IPersonService personService)
+        public PersonController(IPersonService personService)
         {
-            this._studyService = studyService;
-            this._countryService = countryService;
-            this._siteService = siteService;
             this._personService = personService;
         }
         /// <summary>
-        /// 
+        /// Gets all person
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -49,24 +43,20 @@ namespace Montrium.Connect.ClinicalDirectory.Controllers
         }
 
         /// <summary>
-        /// gets all person
+        /// gets a single person
         /// </summary>
         /// <param name="personId"></param>
         /// <returns></returns>
         [HttpGet("{personId:Guid}")]
-        // GET api/person
         [ProducesResponseType(200, Type = typeof(Person))]
-        public ActionResult<IEnumerable<Person>> Get([FromRoute]Guid personId = new Guid())
+        [ProducesResponseType(404)]
+        public ActionResult<Person> Get(Guid personId)
         {
-            if (personId == Guid.Empty)
+            if (personId == null || personId == Guid.Empty)
             {
-                return _personService.ReadPersons();
+                return NotFound();
             }
-            else if (personId != Guid.Empty)
-            {
-                //return _personService.ReadPerson(personId);
-            }
-            return BadRequest();
+            return _personService.ReadPerson(personId);
         }
 
 
