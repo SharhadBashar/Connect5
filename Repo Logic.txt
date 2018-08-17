@@ -1,0 +1,55 @@
+Repo logic:
+
+Create:
+Person: /api/person
+Study: /api/studies
+Countries: /api/countries
+Sites: /api/sites
+Document: /api/document
+
+Get (single item):
+Person: /api/person/personId
+Study: /api/studies/studyId
+Countries: /api/countries/countryId
+Sites: /api/sites/siteId
+Document: /api/document/documentId
+
+Get (all):
+Person: /api/person
+Study: /api/studies
+Countries: /api/countries
+Sites: /api/sites
+Document: /api/document
+
+Update:
+Person: /api/person/personId
+Study: /api/studies/studyId
+Countries: /api/countries/countryId
+Sites: /api/sites/siteId
+Document: /api/document/documentId
+
+Delete:
+Person: /api/person/personId
+Study: /api/studies/studyId
+Countries: /api/countries/countryId
+Sites: /api/sites/siteId
+Document: /api/document/documentId
+
+Edge:
+Create: /api/parentType/parentTypeId/childType/childTypeId/relationship/connect
+Update: /api/parentType/parentTypeId/childType/childTypeId/relationship/connect
+delete: /api/parentType/parentTypeId/childType/childTypeId/relationship/connect
+	- parentType and parentId should correspond to the same item. If they dont, the controller wont work
+	- childType and childId should correspond to the same item. If they dont, the controller wont work
+	- relationship will be put in the label of the edge
+	- if relationship = UserAccess and child != Document: it will create edges between a user and a node, and all child nodes below said node (that are not documents)
+	- if relationship = RemoveUserAccess, it will remove Users access to a node, and all child nodes below said nodes
+
+Get a Document for an user and permission:
+/api/User/userId/Permission/permissionType(List, Read, Write)/document
+	- userId is the users ID. 
+	- The words User and Permission need to be there as shown, otherwise it wont work
+	- permissionType has to be either List or Read or Write, and exactly like that. read or READ wont work
+
+
+
